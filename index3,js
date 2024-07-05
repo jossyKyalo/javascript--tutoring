@@ -1,0 +1,63 @@
+//inheritance= allows a new class to inherit properties and methods
+//              from an existing class (parent -> child)
+//              helps with code reusability
+class Animal{
+    alive=true;
+
+    eat(){
+        console.log('This ${this.name} is eating');
+    }
+    sleep(){
+        console.log("this ${this.name} is sleeping");
+    }
+}
+class Rabbit extends Animal{
+    name="rabbit";
+}
+class Fish extends Animal{
+    name="fish";
+}
+class Hawk extends Animal{
+    name="hawk";
+}
+
+const rabbit =new Rabbit();
+const fish=new Fish();
+const hawk=new Hawk();
+
+console.log(rabbit.alive);
+rabbit.sleep();
+
+//super= keyword used in classes to call the constructor or access th properties
+//       and methods of a parent (superclass) this= this object, super= the parent
+class Animal{
+    constructor(name, age){
+        this.name=name;
+        this.age=age;
+    }
+}
+class Rabbit extends Animal{
+    constructor(name, age, runSpeed){
+        super(name,age);
+        this.runSpeed=runSpeed;
+    }
+}
+class Fish extends Animal{
+    constructor(name, age, swimSpeed){
+        super(name, age);
+        this.swimSpeed=swimSpeed;
+    }
+}
+class Hawk extends Animal{
+    constructor(name, age, flyingSpeed){
+        super(name, age);
+        this.flyingSpeed=flyingSpeed;
+    }
+}
+const rabbit=new Rabbit("rabbit",1,25);
+const fish=new fish("fish",2,12);
+const hawk=new hawk("hawk",3,50);
+
+console.log(fish.name);
+console.log(rabbit.age);
+console.log(hawk.flyingSpeed);
